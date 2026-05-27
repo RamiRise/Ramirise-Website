@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RamiRise | Career Consultancy, IT Solutions & Employment Services</title>
+  <meta name="description" content="RamiRise is a Toronto-based firm offering career consultancy, employment services, mobile app development, and IT project solutions for individuals and businesses." />
+  <meta name="keywords" content="RamiRise, career consultancy, employment agency, mobile app development, IT projects, Toronto, job placement, software development" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #12244a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f1eb;
+      --cream-dark: #ede8df;
+      --charcoal: #2c2c2c;
+      --muted: #6b6b6b;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(10, 22, 40, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--white); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 60px 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 70%, rgba(201,168,76,0.05) 0%, transparent 60%);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 860px;
+      text-align: center;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      margin-bottom: 32px;
+      border-radius: 2px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-content p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      max-width: 580px;
+      margin: 0 auto 44px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 36px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 14px 36px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-stats {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 300;
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 100px 60px; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .section-body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 560px;
+      font-weight: 300;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--white); }
+
+    .services-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 72px;
+    }
+
+    .services-header .section-body { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--cream-dark);
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 48px 40px;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover { background: var(--navy); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 28px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card:hover .service-icon { border-color: var(--gold); }
+
+    .service-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 14px;
+      transition: color 0.3s;
+    }
+
+    .service-card:hover h3 { color: var(--gold); }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    .service-card:hover p { color: rgba(255,255,255,0.65); }
+
+    /* ── STANDARD SECTION ── */
+    #standard {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #standard .section-title { color: var(--white); }
+
+    .standard-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .standard-features {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: rgba(201,168,76,0.3);
+      font-weight: 300;
+      line-height: 1;
+      min-width: 40px;
+    }
+
+    .feature-text h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .feature-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .standard-visual {
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 60px 48px;
+      position: relative;
+    }
+
+    .standard-visual::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 8rem;
+      color: rgba(201,168,76,0.12);
+      position: absolute;
+      top: -20px; left: 24px;
+      line-height: 1;
+    }
+
+    .standard-visual blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+      font-weight: 300;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .standard-visual cite {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-content .section-body { margin-bottom: 24px; }
+
+    .about-values {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .value-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+    }
+
+    .value-item h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .value-item p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .about-mission {
+      background: var(--navy);
+      padding: 60px 48px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-mission h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    .about-mission p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .about-mission .btn-primary { margin-top: 20px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+    }
+
+    .contact-info { padding-top: 8px; }
+
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+
+    .contact-detail-icon {
+      width: 40px; height: 40px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+    .contact-detail h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-detail p, .contact-detail a {
+      font-size: 0.92rem;
+      color: var(--navy);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover { color: var(--gold); }
+
+    .contact-form {
+      background: var(--cream);
+      padding: 52px 48px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--cream-dark);
+      background: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group textarea { height: 130px; resize: vertical; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--navy);
+      color: var(--gold);
+      border: none;
+      padding: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: var(--navy-mid); }
+
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: var(--gold);
+      overflow: hidden;
+      padding: 14px 0;
+      white-space: nowrap;
+    }
+
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+
+    .ticker-inner span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-right: 60px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 60px 60px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand .nav-logo { display: block; margin-bottom: 18px; }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: var(--navy); padding: 24px; gap: 20px; border-bottom: 1px solid rgba(201,168,76,0.2); }
+      .nav-links.open { display: flex; }
+      .hamburger { display: flex; }
+      section { padding: 72px 24px; }
+      #home { padding: 120px 24px 72px; }
+      .standard-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .about-mission { position: static; }
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 48px 24px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 36px 28px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Rami<span>Rise</span></a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Toronto, Canada · Est. 2026</span>
+    <h1>Grow Your Career.<br>Build Your <em>Business.</em></h1>
+    <p>RamiRise is a Toronto-based consultancy delivering employment services, career placement, mobile app development, and IT project solutions — all under one roof.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-outline">Get Started</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Industries Served</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">IT</span>
+        <span class="stat-label">App & Web Dev</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">HR</span>
+        <span class="stat-label">Employment Agency</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">CA</span>
+        <span class="stat-label">Canada Based</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>Employment Agency</span>
+    <span>Career Placement & Mentorship</span>
+    <span>Mobile App Development</span>
+    <span>IT Project Solutions</span>
+    <span>Internship Programs</span>
+    <span>Toronto & GTA</span>
+    <span>Employment Agency</span>
+    <span>Career Placement & Mentorship</span>
+    <span>Mobile App Development</span>
+    <span>IT Project Solutions</span>
+    <span>Internship Programs</span>
+    <span>Toronto & GTA</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header fade-in">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title">Our <em>Services</em></h2>
+    <p class="section-body">From employment solutions and career mentorship to mobile app development and IT projects — RamiRise brings together the expertise your career or business needs to move forward.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Employment Agency</h3>
+      <p>We connect qualified candidates with employers across Toronto and the GTA. Whether you're hiring or job-seeking, our team matches talent to opportunity with care and precision.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Career Placement & Mentorship</h3>
+      <p>Strategic career guidance for professionals navigating the Canadian job market. We offer resume support, interview coaching, and long-term placement in specialized fields.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <h3>Internship Programs</h3>
+      <p>Structured internship placements that give students and new graduates hands-on experience in their field, while helping businesses access motivated emerging talent.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3>Mobile App Development</h3>
+      <p>We design and build custom mobile applications for iOS and Android. From concept and wireframes to launch, our team delivers clean, functional apps tailored to your business goals.</p>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>IT Project Solutions</h3>
+      <p>End-to-end IT consulting and project delivery for small and mid-sized businesses. We handle web development, system integrations, software consulting, and technical project management.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARD / WHY US -->
+<section id="standard">
+  <div class="standard-inner">
+    <div class="fade-in">
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-title" style="color:var(--white)">The High-Authority<br><em>Professional Standard</em></h2>
+      <p class="section-body" style="color:rgba(255,255,255,0.55)">RamiRise brings together career consultancy, employment services, and technology solutions under one professional practice. We work with individuals, employers, and businesses to deliver outcomes that are practical, sustainable, and built for the Canadian market.</p>
+      <div class="standard-features">
+        <div class="feature-item">
+          <span class="feature-num">01</span>
+          <div class="feature-text">
+            <h4>Employment & Talent Matching</h4>
+            <p>Connecting job seekers and employers across Toronto and the GTA through a thorough, people-first approach.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-num">02</span>
+          <div class="feature-text">
+            <h4>Career Strategy & Mentorship</h4>
+            <p>Personalized roadmaps aligning your skills, goals, and the Canadian job market for meaningful long-term growth.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-num">03</span>
+          <div class="feature-text">
+            <h4>Mobile & Web Development</h4>
+            <p>Custom app and web builds for businesses that need practical, well-designed digital tools without the enterprise overhead.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-num">04</span>
+          <div class="feature-text">
+            <h4>IT Project Consulting</h4>
+            <p>From planning to delivery, we support small and mid-sized businesses with technology projects that actually get done on time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="standard-visual fade-in">
+      <blockquote>We don't just fill positions — we build meaningful connections that create brighter futures for professionals and stronger teams for organizations.</blockquote>
+      <cite>— RamiRise Mission Statement</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="fade-in">
+      <span class="section-label">Who We Are</span>
+      <h2 class="section-title">The Vision Behind<br><em>RamiRise</em></h2>
+      <p class="section-body">RamiRise was founded on the belief that people and businesses deserve practical, honest support — not just promises. Based in Toronto, we work at the intersection of human resources and technology, helping individuals find the right career paths and businesses find the right people and tools to grow.</p>
+      <p class="section-body" style="margin-top:16px">Whether you're a professional looking for your next role, an employer looking to hire, or a business that needs a mobile app or IT project delivered — we approach every engagement with the same commitment to quality and integrity.</p>
+      <div class="about-values">
+        <div class="value-item">
+          <div>
+            <h4>Professionalism</h4>
+            <p>We maintain the highest standards in every interaction, from initial consultation to final placement.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div>
+            <h4>Reliability</h4>
+            <p>Our clients trust us to deliver — we take that responsibility seriously with transparent, consistent service.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div>
+            <h4>Personalized Support</h4>
+            <p>Every candidate and employer receives tailored attention, not a one-size-fits-all approach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-mission fade-in">
+      <h3>A Full-Service Partner for People & Business</h3>
+      <p>At RamiRise, we believe the right opportunity — or the right technology — can transform a career or a company. We bring together employment expertise and IT capability so our clients don't have to go to five different places to get things done.</p>
+      <p>We work closely with individuals, employers, and business owners to understand their real needs. Our team is small, direct, and invested in delivering results — not just activity.</p>
+      <a href="#contact" class="btn-primary">Start a Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info fade-in">
+      <span class="section-label">Reach Us</span>
+      <h2 class="section-title">Contact <em>Us</em></h2>
+      <p class="section-body" style="margin-bottom:48px">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>2220 Lakeshore Boulevard West<br>Toronto, ON, Canada</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:ramirise11@gmail.com">ramirise11@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 5.82 5.82l1.93-1.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+14378333155">+1 (437) 833-3155</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form fade-in">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" placeholder="jane@example.com" required />
+      </div>
+      <div class="form-group">
+        <label>How Can We Help? *</label>
+        <select required>
+          <option value="" disabled selected>Select a topic</option>
+          <option>Employment & Job Placement</option>
+          <option>Career Mentorship</option>
+          <option>Internship Program</option>
+          <option>Mobile App Development</option>
+          <option>IT Project Consulting</option>
+          <option>General Inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message *</label>
+        <textarea placeholder="Tell us about yourself and what you're looking for..." required></textarea>
+      </div>
+      <button class="form-submit" type="button" onclick="handleSubmit(this)">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo">Rami<span>Rise</span></a>
+      <p>A Toronto-based firm offering employment services, career placement, mobile app development, and IT project solutions for individuals and businesses across Canada.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:ramirise11@gmail.com">ramirise11@gmail.com</a></li>
+        <li><a href="tel:+14378333155">+1 (437) 833-3155</a></li>
+        <li><a href="#contact">2220 Lakeshore Blvd W<br>Toronto, ON, Canada</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 RamiRise. All rights reserved.</p>
+    <p>Career Consultancy · Employment Agency · IT Solutions · Toronto, Canada</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(btn) {
+    const form = btn.closest('.contact-form');
+    const email = form.querySelector('input[type=email]').value;
+    const topic = form.querySelector('select').value;
+    const msg = form.querySelector('textarea').value;
+    if (!email || !topic || !msg) {
+      btn.textContent = 'Please fill all required fields';
+      btn.style.background = '#c0392b';
+      setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 2500);
+      return;
+    }
+    const subject = encodeURIComponent('RamiRise Inquiry: ' + topic);
+    const body = encodeURIComponent(msg + '\n\nFrom: ' + email);
+    window.location.href = 'mailto:ramirise11@gmail.com?subject=' + subject + '&body=' + body;
+    btn.textContent = '✓ Opening Email Client...';
+    btn.style.background = '#27ae60';
+    setTimeout(() => { btn.textContent = 'Send Message'; btn.style.background = ''; }, 3000);
+  }
+</script>
+
+</body>
+</html>
